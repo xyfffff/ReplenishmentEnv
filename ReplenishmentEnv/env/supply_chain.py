@@ -42,7 +42,7 @@ class SupplyChain:
         assert(self.tail is not None)
         for warehouse, value in self.warehouse_dict.items():
             assert(isinstance(value["upstream"], str))
-            assert(isinstance(value["upstream"], str))
+            assert(isinstance(value["downstream"], str))
             if self.warehouse_dict[warehouse]["upstream"] != "super_vendor":
                 assert(self.warehouse_dict[self.warehouse_dict[warehouse]["upstream"]]["downstream"] == warehouse)
             if self.warehouse_dict[warehouse]["downstream"] != "consumer":
